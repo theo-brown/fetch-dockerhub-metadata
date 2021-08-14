@@ -1,11 +1,17 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Fetch DockerHub Metadata'
+description: 'Get metadata of a Docker image hosted on DockerHub'
+author: 'Theo Brown'
 inputs:
-  milliseconds: # change this
+  repository:
     required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+    description: 'DockerHub repository name (e.g. myuser/myrepo)'
+  tag:
+    required: true
+    default: latest
+    description: 'Docker image tag (default: latest)'
+outputs:
+  metadata:
+    description: 'Metadata of Docker image'
 runs:
   using: 'node12'
   main: 'dist/index.js'
