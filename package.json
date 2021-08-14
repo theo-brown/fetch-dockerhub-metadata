@@ -1,8 +1,8 @@
 {
-  "name": "typescript-action",
+  "name": "fetch-dockerhub-metadata",
   "version": "0.0.0",
   "private": true,
-  "description": "TypeScript template action",
+  "description": "Get metadata of a Docker image hosted on DockerHub",
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
@@ -15,17 +15,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
+    "url": "git+https://github.com/theo-brown/fetch-dockerhub-metadata.git"
   },
   "keywords": [
     "actions",
     "node",
     "setup"
   ],
-  "author": "",
+  "author": "Theo Brown",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.4.0"
+    "@actions/core": "^1.4.0",
+    "@actions/github": "^5.0.0"
   },
   "devDependencies": {
     "@types/node": "^16.3.3",
