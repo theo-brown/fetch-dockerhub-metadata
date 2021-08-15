@@ -23,7 +23,7 @@ outputs:
     created:
       description: 'Timestamp of image creation'
     docker_version:
-      description: 'Docker version that image is build using'
+      description: 'Docker version that image is built using'
     history:
       description: 'JSON containing build history'
     os:
