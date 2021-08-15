@@ -10,8 +10,26 @@ inputs:
     default: latest
     description: 'Docker image tag (default: latest)'
 outputs:
-  metadata:
-    description: 'Metadata of Docker image'
+    architecture:
+      description: 'Docker image architecture'
+    config:
+      description: 'JSON containing image config'
+    labels:
+      description: 'JSON containing labels attached to image'
+    container:
+      description: 'ID of container'
+    container_config:
+      description: 'JSON containing container config'
+    created:
+      description: 'Timestamp of image creation'
+    docker_version:
+      description: 'Docker version that image is build using'
+    history:
+      description: 'JSON containing build history'
+    os:
+      description: 'OS running on image'
+    rootfs:
+      description: 'Layer list'
 runs:
   using: 'node12'
   main: 'dist/index.js'
