@@ -65,5 +65,26 @@ This example workflow is set up in this repository. The code can be found
 at [.github/workflows/example.yml](https://github.com/theo-brown/fetch-dockerhub-metadata/blob/main/.github/workflows/example.yml).
 
 ```yaml
+name: 'Example workflow'
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - 'releases/*'
+  workflow_dispatch:
 
+jobs:
+  fetch-metadata-example:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch metadata from DockerHub
+        id: fetch-metadata
+        uses: theo-brown/fetch-dockerhub-metadata@v1
+        with:
+          repository: theobrown/fetch-dockerhub-metadata-test
+          tag: latest
+      - name: An example step (get the label matching id 'testlabel')
+        run: |
+          echo '${{ steps.fetch-metadata.outputs.labels }}' | jq .testlabel
 ```
