@@ -11,12 +11,12 @@ jobs:
   fetch-metadata-example:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: fetch-metadata
-        uses: ./
+      - name: Fetch metadata from DockerHub
+        id: fetch-metadata
+        uses: theo-brown/fetch-dockerhub-metadata@v1
         with:
           repository: theobrown/fetch-dockerhub-metadata-test
-          tag: 1
+          tag: latest
       - name: another-step
         run: |
           echo "Labels fetched from DockerHub: ${{ steps.fetch-metadata.outputs.labels }}"
