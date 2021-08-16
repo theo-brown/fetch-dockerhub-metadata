@@ -17,6 +17,6 @@ jobs:
         with:
           repository: theobrown/fetch-dockerhub-metadata-test
           tag: latest
-      - name: another-step
+      - name: An example step (get the label matching id 'testlabel')
         run: |
-          echo "Labels fetched from DockerHub: ${{ steps.fetch-metadata.outputs.labels }}"
+          echo '${{ steps.fetch-metadata.outputs.labels }}' | jq .testlabel
