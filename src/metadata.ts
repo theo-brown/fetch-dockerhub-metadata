@@ -68,6 +68,9 @@ export async function get_metadata(
     `https://registry-1.docker.io/v2/${repository}/manifests/${tag}`,
     {headers: auth_header}
   )
+  if (!response.ok) {
+    throw new Error('No matching repository:tag found.')
+  }
   response_json = await response.json()
   const digest = response_json.config.digest
   // Get metadata
