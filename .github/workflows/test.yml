@@ -22,4 +22,4 @@ jobs:
       - uses: ./
         with:
           repository: theobrown/fetch-dockerhub-metadata-test
-          tag: 1
+          tag: latest
