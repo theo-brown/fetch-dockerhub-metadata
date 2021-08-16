@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Fetch metadata from DockerHub
         id: fetch-metadata
-        uses: theo-brown/fetch-dockerhub-metadata@v1-alpha
+        uses: theo-brown/fetch-dockerhub-metadata@v1
         with:
           repository: theobrown/fetch-dockerhub-metadata-test
           tag: latest
